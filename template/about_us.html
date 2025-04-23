@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Educational NGO</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        p,
+        li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        ul {
+            list-style: square inside;
+            padding-left: 10px;
+        }
+
+        .program {
+            background: #e9f5ec;
+            padding: 20px;
+            border-left: 5px solid #4CAF50;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        .program h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .team-member {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 30px;
+        }
+
+        .member {
+            width: 260px;
+            text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .member:hover {
+            transform: scale(1.05);
+        }
+
+        .member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #4CAF50;
+        }
+
+        .member h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .member p {
+            margin-top: 5px;
+            font-size: 1rem;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <!-- Our Story Section -->
+        <section id="our-story">
+            <h2>Our Story</h2>
+            <p id="story-content">
+                {{ our_story.content }}
+            </p>
+        </section>
+
+        <!-- Core Values Section -->
+        <section id="core-values">
+            <h2>Core Values</h2>
+            <ul>
+                {% for value in core_values %}
+                <li>{{ value.value }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs">
+            <h2>Our Programs</h2>
+          
+            <div class="program">
+              <h3><a href="/ujjwal" style="text-decoration: none; color: inherit;">Ujjwal Bhavishya</a></h3>
+              <p>{{ programs.ujjwal_bhavishya.description }}</p>
+            </div>
+          
+            <div class="program">
+              <h3><a href="/fly" style="text-decoration: none; color: inherit;">She Can Fly</a></h3>
+              <p>{{ programs.she_can_fly.description }}</p>
+            </div>
+          
+            <div class="program">
+              <h3><a href="/shiksha" style="text-decoration: none; color: inherit;">Shiksha Na Ruke</a></h3>
+              <p>{{ programs.shikha_na_ruke.description }}</p>
+            </div>
+          </section>
+          
+
+        <!-- Team Members Section (Hardcoded) -->
+        <section id="team-members">
+            <h2>Our Team</h2>
+            <div class="team-member">
+                <div class="member">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Photo of Anjali Verma">
+                    <h3>Anjali Verma</h3>
+                    <p>Founder & Director</p>
+                </div>
+                <div class="member">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Photo of Ravi Sharma">
+                    <h3>Ravi Sharma</h3>
+                    <p>Program Head - Ujjwal Bhavishya</p>
+                </div>
+                <div class="member">
+                    <img src="https://randomuser.me/api/portraits/women/30.jpg" alt="Photo of Neha Kapoor">
+                    <h3>Neha Kapoor</h3>
+                    <p>Lead Coordinator - She Can Fly</p>
+                </div>
+                <div class="member">
+                    <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Photo of Manish Gupta">
+                    <h3>Manish Gupta</h3>
+                    <p>Finance & Operations Manager</p>
+                </div>
+                <div class="member">
+                    <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="Photo of Ritu Singh">
+                    <h3>Ritu Singh</h3>
+                    <p>Community Outreach Officer</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>

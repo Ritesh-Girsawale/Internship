@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User 
 from django.contrib.auth import authenticate,login
 from django.contrib.auth import logout as auth_logout
-from .models import Work
+from .models import Work,  OurStory, CoreValue, Program, TeamMember
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
@@ -177,6 +177,30 @@ def submit_volunteer_form(request):
         availability = request.POST.get("availability")
         interest = request.POST.get("interest")
         message = request.POST.get("message")
-        # You can save this to the DB or send an email
+        
         return HttpResponse("Thank you for volunteering!")
     return redirect("body.html")       
+
+
+
+
+
+
+
+def about_us(request):
+    # Fetch data from the models
+    story = OurStory.objects.first()  # Assuming only one story is available
+    core_values = CoreValue.objects.all()
+    programs = Program.objects.all()
+    team_members = TeamMember.objects.all()
+
+    # Pass the data to the template
+    context = {
+        'our_story': story,
+        'core_values': core_values,
+        'programs': programs,
+        'team_members': team_members,
+    }
+
+    # Render the template with the context data
+    return render(request, 'about_us.html', context)

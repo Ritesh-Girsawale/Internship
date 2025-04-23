@@ -41,7 +41,7 @@ urlpatterns = [
     path('volenteer/',views.volenteer),
     path('volunteer_form/', views.volunteer_form, name="volunteer_form"),
     path("submit-volunteer-form/", views.submit_volunteer_form, name="submit_volunteer_form"),
-
+    path('about/', views.about_us, name='about_us'), 
 ] 
 
 
