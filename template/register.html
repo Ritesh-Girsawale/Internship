@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+
+<style>
+    .form-container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        border: 1px solid red;
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .mb-3 label {
+        display: block;
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .register-btn {
+        background: #28a745;
+        color: white;
+    }
+
+    .login-btn {
+        background: #007bff;
+        color: white;
+    }
+
+    button:hover {
+        opacity: 0.85;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+</style>
+
+<!-- Centered layout with padding to avoid fixed navbar -->
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; padding-top: 120px;">
+    <div class="form-container">
+        <h2>Register</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {% if error_msg %}
+            <div class="alert alert-danger">
+                {{ error_msg }}
+            </div>
+            {% endif %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" class="form-control" name="uname" placeholder="Enter Username">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" name="uemail" placeholder="Enter Email">
+            </div>
+            <div class="mb-3">
+                <label for="Password" class="form-label">Password:</label>
+                <input type="password" class="form-control" placeholder="Enter password" name="upass">
+            </div>
+            <div class="mb-3">
+                <label for="cPassword" class="form-label">Confirm Password:</label>
+                <input type="password" class="form-control" placeholder="Re-Enter password" name="ucpass">
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="register-btn">Register</button>
+                <a href="/login"><button type="button" class="login-btn">Already Registered?</button></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock main %}

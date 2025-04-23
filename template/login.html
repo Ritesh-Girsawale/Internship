@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+
+<style>
+    .form-container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        border: 1px solid red;
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .mb-3 label {
+        display: block;
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .register-btn {
+        background: #28a745;
+        color: white;
+    }
+
+    .login-btn {
+        background: #007bff;
+        color: white;
+    }
+
+    button:hover {
+        opacity: 0.85;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+</style>
+
+<!-- Centered container with top spacing to avoid navbar overlap -->
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; padding-top: 120px;">
+    <div class="form-container">
+        <h2>Login</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="login-btn">Login</button>
+                <a href="/register"><button type="button" class="register-btn">Not Registered?</button></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

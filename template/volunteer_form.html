@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+
+<!-- Bootstrap 5 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- Form Container -->
+<div class="container py-5">
+    <h2 class="text-center mb-4">Volunteer Registration Form</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post" action="/submit-volunteer-form/" class="border p-4 shadow rounded bg-light">
+                {% csrf_token %}
+                
+                <!-- Full Name -->
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" name="name" class="form-control" id="fullName" required>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="emailAddress" class="form-label">Email Address</label>
+                    <input type="email" name="email" class="form-control" id="emailAddress" required>
+                </div>
+
+                <!-- Phone -->
+                <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input type="tel" name="phone" class="form-control" id="phoneNumber" required>
+                </div>
+
+                <!-- Availability -->
+                <div class="mb-3">
+                    <label for="availability" class="form-label">Availability (days/times)</label>
+                    <input type="text" name="availability" class="form-control" id="availability" placeholder="e.g., Weekends, Mon-Fri evenings" required>
+                </div>
+
+                <!-- Area of Interest -->
+                <div class="mb-3">
+                    <label for="interest" class="form-label">Area of Interest</label>
+                    <select name="interest" id="interest" class="form-select" required>
+                        <option value="">Select one</option>
+                        <option value="teaching">Teaching</option>
+                        <option value="content-creation">Content Creation</option>
+                        <option value="event-management">Event Management</option>
+                        <option value="social-media">Social Media/Outreach</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+
+                <!-- Message -->
+                <div class="mb-3">
+                    <label for="message" class="form-label">Why do you want to volunteer?</label>
+                    <textarea name="message" id="message" rows="4" class="form-control" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock main %}

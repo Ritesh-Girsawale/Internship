@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vision & Mission - EduCare NGO</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+
+body {
+  background-color: #f3f4f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2d3748;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1e40af;
+  margin-bottom: 50px;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.column {
+  flex: 1;
+  min-width: 300px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #2563eb;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+ul li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.vision {
+  border-right: 2px solid #e5e7eb;
+  padding-right: 20px;
+}
+
+.mission {
+  padding-left: 20px;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="title">EduCare NGO</h1>
+
+    <div class="columns">
+      <!-- Vision Section (Left Side) -->
+      <div class="column vision">
+        <h2>Our Vision</h2>
+        <p>
+          At EduCare, we envision a world where education is the bridge to a better future for every child, regardless of their socio-economic background. We aim to break down barriers that hinder access to knowledge and opportunity.
+        </p>
+        <p>
+          Our vision is not just to educate but to empower — helping students become leaders, thinkers, and problem-solvers. We strive to build a community where education sparks change and helps eradicate poverty, discrimination, and inequality.
+        </p>
+        <p>
+          We believe in nurturing minds that are curious, courageous, and creative. Through inclusive and innovative learning environments, we want to shape individuals who not only succeed academically but contribute positively to the world around them.
+        </p>
+        <p>
+          In the long term, we envision a generation equipped with the confidence, competence, and compassion to bring sustainable development and peace to society.
+        </p>
+      </div>
+
+      <!-- Mission Section (Right Side) -->
+      <div class="column mission">
+        <h2>Our Mission</h2>
+        <p>
+          Our mission is to create equitable learning opportunities for children in marginalized and remote communities. We are committed to transforming education through grassroots efforts, technology, and strong community partnerships.
+        </p>
+        <ul>
+          <li>Provide free, quality education tailored to each child's unique learning needs.</li>
+          <li>Implement digital learning platforms and mobile classrooms for rural access.</li>
+          <li>Train local volunteers and educators to create a sustainable education ecosystem.</li>
+          <li>Foster life skills, vocational training, and mentorship programs to boost employability.</li>
+          <li>Run regular workshops on gender equality, health awareness, and environmental education.</li>
+          <li>Create inclusive classrooms that welcome differently-abled children and support mental health.</li>
+          <li>Engage families and local leaders to encourage community ownership of education initiatives.</li>
+        </ul>
+        <p>
+          With dedication, innovation, and heart, EduCare strives to ignite change — one child, one classroom, one village at a time.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+{% endblock main %}

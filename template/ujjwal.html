@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-12">
+
+            <img src="{% static 'images/file-23441-9ac4afb6737e9e981023a11bb24f5128.jpg' %}" alt="" width="100%"
+                height="90%">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="text-align: justify;">
+    <div class="row">
+
+        
+        <div class="col-5">
+            <b>
+                <p style="font-size:xx-large;">Your Donation Can Give Someone a Dignified Livelihood</p>
+            </b><hr>
+
+            <p>A country like India which has a huge young population can reap better benefits from the demographic
+                dividend if its youth are better skilled and employable. According to some estimates, India’s
+                demographic dividend window opened in 2005-06 and it is expected to last till the mid-2050s. By 2047,
+                India will have 1.1 billion people in the working age group (15-64), which is the peak of the
+                demographic dividend that the country is expected to reach in the coming years. And, this is why the
+                next two decades are extremely crucial for India.
+                <br><br>
+                Smile Foundation, recognizing the need of the hour, has reprogrammed its employability training
+                initiative 'STeP' to fight the challenges posed by poverty and unemployment. Our campaign ‘Tayyari Kal
+                Ki’ aims at Training & Up-skilling the youth between the age of 18-32 years for employment and
+                empowering them with a secure livelihood.
+                <br><br>
+                This livelihood mission is in strong alignment with the Government of India’s ‘Skill India’ initiative.
+                Currently, the programme is operational through 74 centres across 7 states. In the last 15 years, Smile
+                Foundation has trained over 90,000 youth, and placed more than 56,500 of them in over 400 brands across
+                India.
+                <br><br>
+                Donate now to support skill training, employment and a dignified livelihood for underprivileged youth.
+                Give them and their families a chance to step above the poverty line!
+            </p>
+        </div>
+
+        <div class="col-1">
+
+        </div>
+
+
+        <div class="col-6">
+
+
+            <style>
+                .donation-container {
+                    position: relative;
+                    text-align: center;
+                    color: white;
+                }
+
+                .donation-img {
+                    width: 80%;
+                    height: auto;
+                }
+
+                .donation-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.5);
+                    /* semi-transparent overlay */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+
+                .donation-box {
+                    background-color: rgba(255, 255, 255, 0.9);
+                    padding: 30px;
+                    border-radius: 10px;
+                    max-width: 400px;
+                    width: 100%;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                    color: #000;
+                }
+
+                .donation-box h2 {
+                    margin-bottom: 20px;
+                }
+
+                .donation-box input {
+                    width: 100%;
+                    padding: 10px;
+                    margin: 10px 0 20px 0;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+
+                .donation-box button {
+                    background-color: #3399cc;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .donation-box button:hover {
+                    background-color: #267aa5;
+                }
+            </style>
+
+            <div class="donation-container">
+                <img src="{% static 'images/logo2.png' %}" alt="Donation Banner" class="donation-img">
+                <div class="donation-overlay">
+                    <div class="donation-box">
+                        <h2>Support Our Cause</h2>
+
+                        
+                        
+                        
+                            <a href="/donate"><button type="submit">Donate</button></a>
+                        
+                       
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+{% endblock main %}
