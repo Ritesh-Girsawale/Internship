@@ -1,4 +1,4 @@
-# Sakshar NGO Web Platform
+# Sakshar NGO Web Platform-
 
 Sakshar is an NGO dedicated to empowering underprivileged students by improving access to education through various outreach and support programs. This web platform is designed as part of an internship project to showcase Sakshar's work, engage volunteers, and track impact across communities.
 
