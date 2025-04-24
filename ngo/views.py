@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User 
 from django.contrib.auth import authenticate,login
 from django.contrib.auth import logout as auth_logout
-from .models import Work,  OurStory, CoreValue, Program, TeamMember
+from .models import Work,  OurStory, CoreValue, Program, TeamMember,  PressRelease, MediaCoverage, ImageGallery
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
@@ -204,3 +204,16 @@ def about_us(request):
 
     # Render the template with the context data
     return render(request, 'about_us.html', context)
+
+
+def media_page(request):
+    context = {
+        'press_releases': PressRelease.objects.all().order_by('-release_date'),
+        'media_coverages': MediaCoverage.objects.all().order_by('-created_at'),
+        'gallery_images': ImageGallery.objects.all().order_by('-uploaded_at')
+    }
+    return render(request, 'media.html', context)    
+
+
+def contact(request):
+    return render(request,'contact.html')    

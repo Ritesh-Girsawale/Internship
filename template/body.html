@@ -139,11 +139,13 @@
     /* top stories */
         
     .top-stories-title {
-        text-align: center;
-        font-size: 2rem;
-        font-weight: bold;
-        margin-top: 30px;
-        margin-bottom: 20px;
+        font-size: 2.2rem;
+  margin-bottom: 40px;
+  font-weight: 900;
+  color: #222;
+  letter-spacing: 1px;
+  text-align: center;
+       
     }
 
     .story-card {
@@ -188,6 +190,50 @@
         background-color: #0056b3;
     }
 
+
+    /* partners css */
+
+
+    .partners-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #e0f2f1;
+}
+
+.partners-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  font-weight: 900;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.partners-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 40px 50px; /* 40px vertical, 50px horizontal */
+  justify-items: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.partners-logos img {
+  max-width: 130px;
+  max-height: 70px;
+  object-fit: contain;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.partners-logos img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
 
 
     </style>
@@ -395,10 +441,10 @@
 
 
 
-<div class="container-fluid">
+<div class="container-fluid" >
     <div class="row">
         <div class="col-12 top-stories-title">
-            Top Stories
+          Top Stories  
         </div>
     </div>
 </div><br>
@@ -419,6 +465,32 @@
         {% endfor %}
     </div>
 </div>
+
+<hr>
+
+
+
+
+
+  <section class="partners-section">
+    <h2>OUR PARTNERS IN CHANGE</h2>
+    <div class="partners-logos">
+      <img src="{% static 'images/augur.svg' %}">
+      <img src="{% static 'images/counter-1.svg' %}" >
+      <img src="{% static 'images/counter-strike-global-offensive-2.svg' %}" >
+      <img src="{% static 'images/ethereum.svg' %}" >
+      <img src="{% static 'images/hengst-filtration-1.svg' %}" >
+      <img src="{% static 'images/lucky-strike-logo.svg' %}" >
+      <img src="{% static 'images/ripple-white.svg' %}" >
+      <img src="{% static 'images/whatsapp-white.svg' %}" >
+      <img src="{% static 'images/super-cash.svg' %}" >
+      <img src="{% static 'images/js-print.svg' %}" >
+      <img src="{% static 'images/kauai-coffee.svg' %}" >
+      <img src="{% static 'images/apple-music-3.svg' %}" >
+      <img src="{% static 'images/bita-music.svg' %}" >
+      <img src="{% static 'images/cash-converters.svg' %}" >
+    </div>
+  </section>
 
 
 
